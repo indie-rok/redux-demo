@@ -1,9 +1,20 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-export default function NameContainer({ user }) {
+function NameContainer({ user }) {
     return (
         <div>
             <p>Your name: {user.name} --- </p>
         </div>
     )
 }
+
+const mapStateToProps = (state) => {
+    return {
+        user: {
+            name: state.name
+        }
+    }
+}
+
+export default connect(mapStateToProps)(NameContainer)
