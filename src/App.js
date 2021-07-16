@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer'
+import Content from './components/Content'
 
 function App() {
   const [user, setUser] = useState({name: 'Emmanuel', favoriteFood: 'Pizza'})
@@ -9,9 +9,7 @@ function App() {
     <div className="App">
       <Navbar user={user} />
 
-      <article>
-        My content
-      </article>
+      <Content user={user} setUser={setUser} />
 
     </div>
   );
